@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div id="about">
       <div className="bg-[#191919] h-[70vh]  md:sticky md:top-0 z-10 w-full flex flex-col items-center justify-center gap-12">
-        {/* First text section - slides in from left */}
+        {/* First text section  */}
         <motion.div
           className="text-center max-w-4xl"
           initial={{ x: -150, opacity: 0 }}
@@ -16,7 +16,7 @@ export default function About() {
             transition: {
               duration: 0.5,
               ease: "easeOut",
-              delay: 0.3, // Delay to let card drop first
+              delay: 0.3, 
             },
           }}
           viewport={{ once: true, amount: 0.3 }}
@@ -29,7 +29,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* Card image - drops down from top */}
+        {/* Card image */}
         <motion.div
           initial={{ y: -200, opacity: 0 }}
           whileInView={{
@@ -55,7 +55,7 @@ export default function About() {
           />
         </motion.div>
 
-        {/* Second text section - slides in from left */}
+        {/* Second text section */}
         <motion.div
           className="text-center max-w-4xl"
           initial={{ x: 150, opacity: 0 }}

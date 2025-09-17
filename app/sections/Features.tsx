@@ -30,8 +30,6 @@ const SpanningText = () => (
 );
 
 export default function Features() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   // Sample card data
   const cards = [
     {
@@ -50,15 +48,6 @@ export default function Features() {
       title: "Cloud Sync",
     },
   ];
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % cards.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + cards.length) % cards.length);
-  };
-
   return (
     <div
       id="features"
@@ -90,7 +79,7 @@ export default function Features() {
 
         {/* Desktop Grid Layout */}
         <div className="hidden md:grid grid-cols-3 gap-8 grid-rows-4 min-h-[600px]">
-          {/* Row 1: Card - Empty - Card */}
+          {/* Row 1 */}
           <div className="flex items-center justify-center">
             <Card title={cards[0].title} index={0} />
           </div>
@@ -102,7 +91,7 @@ export default function Features() {
             <Card title={cards[1].title} index={1} />
           </div>
 
-          {/* Row 2: Empty - Card - Empty */}
+          {/* Row 2 */}
           <div className="flex items-center justify-center">
             <div className="w-full h-32 opacity-0"></div>
           </div>
@@ -113,7 +102,7 @@ export default function Features() {
             <div className="w-full h-32 opacity-0"></div>
           </div>
 
-          {/* Row 3: Spanning Text (2 columns) - Card */}
+          {/* Row 3 */}
           <div className="col-span-2 flex items-center justify-start">
             <SpanningText />
           </div>
@@ -121,7 +110,7 @@ export default function Features() {
             <Card title={cards[3].title} index={3} />
           </div>
 
-          {/* Row 4: Card - Card - Empty */}
+          {/* Row 4 */}
           <div className="flex items-center justify-center">
             <Card title={cards[4].title} index={4} />
           </div>

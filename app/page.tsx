@@ -20,7 +20,7 @@ export default function Home() {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          const offset = window.innerHeight * 0.4; // Trigger when section is 40% visible
+          const offset = window.innerHeight * 0.4;
 
           // Check if section is in view
           if (rect.top <= offset && rect.bottom >= offset) {
@@ -33,7 +33,7 @@ export default function Home() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Run once on mount
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -51,10 +51,9 @@ export default function Home() {
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
-        block: "start", // Ensures proper alignment
+        block: "start",
       });
 
-      // Update active section immediately for better UX
       setActiveSection(section);
     }
   };

@@ -10,11 +10,10 @@ interface CardProps {
 export const Card = ({ title, index }: CardProps) => (
   <motion.div
     key={index}
-    initial={{ opacity: 0, scale: 1, x: -30 }}
+    initial={{ opacity: 0, scale: 1 }}
     whileInView={{
       opacity: 1,
       scale: 1,
-      x: 0,
       transition: { duration: 0.5, delay: index * 0.1, ease: "easeOut" },
     }}
     whileHover="hover"
